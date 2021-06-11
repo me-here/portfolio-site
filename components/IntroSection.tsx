@@ -4,6 +4,7 @@ import {
   Paragraph,
   CenteredFlex,
   ColoredBackgroundImageCircle,
+  SpacedGroup
 } from "../styles/global-styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGraduationCap, faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
@@ -60,9 +61,4 @@ const DetailedCircleView = (props: DetailedCircleViewProps) => (
 const DetailedParagraph = styled(Paragraph)`
   font-weight: 300;
   margin: 10px 0;
-`;
-
-const SpacedGroup = styled.div`
-  margin: ${(props: { vertical?: string; horizontal?: string }) =>
-    `${props.vertical || 0} ${props.horizontal || 0}`};
 `;

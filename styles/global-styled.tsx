@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
 /**The colors to be used in the application.*/
-class Colors {
+export class Colors {
   static primaryRed =   "#F05454";
   static secondaryRed = "#7E0505";
   static accentGrey =   "#747474";
 }
+
+export const SpacedGroup = styled.div`
+  margin: ${(props: { vertical?: string; horizontal?: string }) =>
+    `${props.vertical || 0} ${props.horizontal || 0}`};
+`;
 
 /**A flex container for a centered row and column.*/
 interface CenteredFlexProps {
