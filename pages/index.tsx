@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Hero from '../components/Hero'
 import Navbar from '../components/Navbar'
+import IntroSection from '../components/IntroSection'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
 
       <Navbar/>
       <Hero/>
+      <IntroSection/>
 
       <main>
         Hello World! This is the main content!

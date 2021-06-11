@@ -3,7 +3,7 @@ import { CenteredFlex } from "../styles/global-styled";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {SocialCircleStyled, RoundedTextLinkStyled} from '../styles/global-styled';
+import {ColoredBackgroundImageCircle, RoundedTextLinkStyled} from '../styles/global-styled';
 
 const BORDER_COLOR = "#414752";
 const BORDER_THICKNESS = "3px";
@@ -32,9 +32,9 @@ const SocialIcons = () => {
 };
 
 const SocialCircleLink = ({ icon, background, href }: any) => (
-  <SocialCircleStyled href={href} size="75px" borderColor={BORDER_COLOR} borderThickness={BORDER_THICKNESS}>
+  <ColoredBackgroundImageCircle href={href} size="75px" borderColor={BORDER_COLOR} borderThickness={BORDER_THICKNESS}>
     <FontAwesomeIcon icon={icon} width="30px" height="30px" />
-  </SocialCircleStyled>
+  </ColoredBackgroundImageCircle>
 );
 
 export default SocialIcons;
