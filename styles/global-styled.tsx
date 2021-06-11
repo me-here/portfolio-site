@@ -24,9 +24,6 @@ export const CenteredFlex = styled.section<CenteredFlexProps>`
   flex-direction: ${props => props.column ? "column" : "row"};
   justify-content: ${props => props.justifyContent || "center"};
   align-items: ${props => props.alignItems || "center"};
-  > * {
-    margin: 0;
-  }
 `;
 
 // MARK: Text styles

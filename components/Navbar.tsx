@@ -27,6 +27,7 @@ const NavContainer = styled.div`
   position: relative;
   justify-content: space-between;
   align-items: center;
+  margin: 2rem;
 
   a {
     transition: ease-out 0.3s;

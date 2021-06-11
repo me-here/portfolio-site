@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import IntroSection from '../components/IntroSection'
 import SkillsSection from '../components/SkillsSection'
 import WorkSection from '../components/WorkSection'
+import Footer from '../components/Footer'
 
 export default function Home() {
   return (
@@ -15,18 +16,13 @@ export default function Home() {
       </Head>
 
       <Navbar/>
-      <Hero/>
-      <IntroSection/>
-      <SkillsSection/>
-      <WorkSection/>
-
       <main>
-        Hello World! This is the main content!
+        <Hero/>
+        <IntroSection/>
+        <SkillsSection/>
+        <WorkSection/>
       </main>
-
-      <footer>
-        Footer
-      </footer>
+      <Footer />
     </div>
   )
 }
