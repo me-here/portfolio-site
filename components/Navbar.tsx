@@ -1,0 +1,47 @@
+import Image from 'next/image'
+import styled from "styled-components";
+
+const Navbar = () => {
+  return (
+    <NavContainer>
+      <LogoContainer href="./">
+        <Image src="/logo.png" layout="fill" alt="My logo"/>
+      </LogoContainer>
+      <RightLinks>
+        <a href='google.com'>Home</a>
+        <a href='google.com'>Blog</a>
+        <a href='google.com'>About</a>
+      </RightLinks>
+    </NavContainer>
+  );
+};
+
+const LogoContainer = styled.a`
+  width: 42.18px; 
+  height: 34.09px;
+  position: relative;
+`;
+
+const NavContainer = styled.div`
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    transition: ease-out 0.3s;
+
+    :hover {
+      transform: scale(1.2, 1.2);
+    }
+  }
+`;
+
+const RightLinks = styled.div`
+  width: 33%;
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+`;
+
+export default Navbar;
