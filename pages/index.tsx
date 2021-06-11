@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import Navbar from '../components/Navbar'
 import IntroSection from '../components/IntroSection'
 import SkillsSection from '../components/SkillsSection'
+import WorkSection from '../components/WorkSection'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero/>
       <IntroSection/>
       <SkillsSection/>
+      <WorkSection/>
 
       <main>
         Hello World! This is the main content!

@@ -26,13 +26,13 @@ const SocialIcons = () => {
         icon={faEnvelope}
         background="teal"
       />
-      <RoundedTextLinkStyled href="https://www.dropbox.com/s/gdoc7ilygyseryd/mihir_thanekar_resume.pdf?dl=0" borderThickness={BORDER_THICKNESS} borderColor={BORDER_COLOR}>See my resume</RoundedTextLinkStyled>
+      <RoundedTextLinkStyled margin="0 1rem" href="https://www.dropbox.com/s/gdoc7ilygyseryd/mihir_thanekar_resume.pdf?dl=0" borderThickness={BORDER_THICKNESS} borderColor={BORDER_COLOR}>See my resume</RoundedTextLinkStyled>
     </CenteredFlex>
   );
 };
 
 const SocialCircleLink = ({ icon, background, href }: any) => (
-  <ColoredBackgroundImageCircle href={href} size="75px" borderColor={BORDER_COLOR} borderThickness={BORDER_THICKNESS}>
+  <ColoredBackgroundImageCircle href={href} size="75px" borderColor={BORDER_COLOR} borderThickness={BORDER_THICKNESS} margin="0 1rem">
     <FontAwesomeIcon icon={icon} width="30px" height="30px" />
   </ColoredBackgroundImageCircle>
 );

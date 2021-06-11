@@ -58,6 +58,11 @@ export const Paragraph = styled.p`
 `;
 
 // MARK: Links
+export const UnderlinedLink = styled.a`
+  text-decoration: underline;
+  font-weight: 600;
+`;
+
 /**Abstract kind of link that should not be used directly. Provides hover changing background functionality.*/
 const HoverableSocialLink = styled.a`
   font-weight: 600;
@@ -68,8 +73,10 @@ const HoverableSocialLink = styled.a`
 `;
 
 export interface LinkProps {
-  readonly borderThickness: string;
-  readonly borderColor: string;
+  readonly borderThickness?: string;
+  readonly borderColor?: string;
+  readonly background?: string;
+  readonly margin?: string;
 }
 
 export interface SocialCircleStyleProps {
@@ -77,6 +84,7 @@ export interface SocialCircleStyleProps {
   readonly background?: string;
   readonly borderThickness?: string;
   readonly borderColor?: string;
+  readonly margin?: string;
 }
 
 export const ColoredBackgroundImageCircle = styled(
@@ -89,13 +97,13 @@ export const ColoredBackgroundImageCircle = styled(
   background: ${(props) => props.background};
   display: grid;
   place-items: center;
-  margin: 0 1rem;
+  margin: ${props => props.margin || "unset"};
 `;
 
 export const RoundedTextLinkStyled = styled(HoverableSocialLink)<LinkProps>`
   border-radius: 25px;
   padding: 1rem;
-  border: ${(props) => props.borderThickness} solid
-    ${(props) => props.borderColor};
-  margin: 0 1rem;
+  border: ${(props)=>(props.borderThickness && props.borderColor) ? `${props.borderThickness} solid ${props.borderColor}` : "none"};
+  background: ${props => props.background || null};
+  margin: ${props => props.margin || "unset"};
 `;
