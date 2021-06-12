@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import {ScreenSize} from "./style-constants"
+import { ScreenSize } from "./style-constants";
 
 /**The colors to be used in the application.*/
 export class Colors {
-  static primaryRed =   "#F05454";
+  static primaryRed = "#F05454";
   static secondaryRed = "#7E0505";
-  static accentGrey =   "#747474";
+  static accentGrey = "#747474";
 }
 
 export const SpacedGroup = styled.div`
@@ -22,9 +22,9 @@ interface CenteredFlexProps {
 
 export const CenteredFlex = styled.section<CenteredFlexProps>`
   display: flex;
-  flex-direction: ${props => props.column ? "column" : "row"};
-  justify-content: ${props => props.justifyContent || "center"};
-  align-items: ${props => props.alignItems || "center"};
+  flex-direction: ${(props) => (props.column ? "column" : "row")};
+  justify-content: ${(props) => props.justifyContent || "center"};
+  align-items: ${(props) => props.alignItems || "center"};
 `;
 
 // MARK: Text styles
@@ -103,17 +103,27 @@ export const ColoredBackgroundImageCircle = styled(
   width: ${(props) => props.size};
   height: ${(props) => props.size};
   border-radius: 50%;
-  border: ${(props)=>(props.borderThickness && props.borderColor) ? `${props.borderThickness} solid ${props.borderColor}` : "none"};
+  border: ${(props) =>
+    props.borderThickness && props.borderColor
+      ? `${props.borderThickness} solid ${props.borderColor}`
+      : "none"};
   background: ${(props) => props.background};
   display: grid;
   place-items: center;
-  margin: ${props => props.margin || "unset"};
+  margin: ${(props) => props.margin || "unset"};
+
+  @media only screen and (min-width: ${ScreenSize.medium}) {
+    margin: 0;
+  }
 `;
 
 export const RoundedTextLinkStyled = styled(HoverableSocialLink)<LinkProps>`
   border-radius: 25px;
   padding: 1rem;
-  border: ${(props)=>(props.borderThickness && props.borderColor) ? `${props.borderThickness} solid ${props.borderColor}` : "none"};
-  background: ${props => props.background || null};
-  margin: ${props => props.margin || "unset"};
+  border: ${(props) =>
+    props.borderThickness && props.borderColor
+      ? `${props.borderThickness} solid ${props.borderColor}`
+      : "none"};
+  background: ${(props) => props.background || null};
+  margin: ${(props) => props.margin || "unset"};
 `;

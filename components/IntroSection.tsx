@@ -4,13 +4,17 @@ import {
   Paragraph,
   CenteredFlex,
   ColoredBackgroundImageCircle,
-  SpacedGroup
+  SpacedGroup,
 } from "../styles/global-styled";
+import { ScreenSize } from "../styles/style-constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGraduationCap, faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
-import { faApple } from "@fortawesome/free-brands-svg-icons"
+import {
+  faGraduationCap,
+  faMapMarkedAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import { faApple } from "@fortawesome/free-brands-svg-icons";
 
-export default function Hero() {
+export default function IntroSection() {
   return (
     <>
       <SpacedGroup vertical="3rem" horizontal="3rem">
@@ -28,26 +32,61 @@ export default function Hero() {
           again!
         </Paragraph>
       </SpacedGroup>
-      <CenteredFlex column={false} justifyContent="space-around">
-        <DetailedCircleView primaryText="UC Irvine Computer Science" secondaryText="2024" background="#D9A7A7" icon={faGraduationCap}/>
-        <DetailedCircleView primaryText="iOS Developer" secondaryText="Student Center Event Services" background="#B1D6B0" icon={faApple}/>
-        <DetailedCircleView primaryText="Located in Fremont & Irvine" background="#B0B4D6" icon={faMapMarkedAlt}/>
-      </CenteredFlex>
+      <ResponsiveInfoFlex
+        column={false}
+        justifyContent="space-around"
+        alignItems="start"
+      >
+        <DetailedCircleView
+          primaryText="UC Irvine Computer Science"
+          secondaryText="2024"
+          background="#D9A7A7"
+          icon={faGraduationCap}
+          href="https://directory.uci.edu/people/mthaneka"
+        />
+        <DetailedCircleView
+          primaryText="iOS Developer"
+          secondaryText="Student Center Event Services"
+          background="#B1D6B0"
+          icon={faApple}
+          href="https://www.studentcenter.uci.edu"
+        />
+        <DetailedCircleView
+          primaryText="Located in Fremont & Irvine"
+          background="#B0B4D6"
+          icon={faMapMarkedAlt}
+          href=""
+        />
+      </ResponsiveInfoFlex>
     </>
   );
 }
+
+const ResponsiveInfoFlex = styled(CenteredFlex)`
+  @media only screen and (min-width: ${ScreenSize.small}) {
+    flex-direction: column;
+    align-items: center;
+    > * {
+      margin: 1rem 0;
+    }
+  }
+  @media only screen and (min-width: ${ScreenSize.medium}) {
+    flex-direction: row;
+  }
+`;
 
 interface DetailedCircleViewProps {
   primaryText: string;
   secondaryText?: string;
   background: string;
   icon: any;
+  href?: string;
 }
 
 const DetailedCircleView = (props: DetailedCircleViewProps) => (
-  <CenteredFlex column={true}>
+  <CenteredFlex column={true} style={{ textAlign: "center" }}>
     <ColoredBackgroundImageCircle
-      href="google.com"
+      href={props.href}
       size="75px"
       background={props.background}
     >

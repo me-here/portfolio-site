@@ -46,16 +46,18 @@ const SocialCircleLink = ({
   href,
   borderColor,
   borderThickness,
-}: any) => (
-  <ColoredBackgroundImageCircle
-    href={href}
-    size="75px"
-    borderColor={borderColor}
-    borderThickness={borderThickness}
-    margin="0 1rem"
-  >
-    <FontAwesomeIcon icon={icon} width="30px" height="30px" />
-  </ColoredBackgroundImageCircle>
-);
+}: any) => {
+  return (
+    <ColoredBackgroundImageCircle
+      href={href}
+      size="75px"
+      borderColor={borderColor}
+      borderThickness={borderThickness}
+      margin="0 1rem"
+    >
+      <FontAwesomeIcon icon={icon} width="30px" height="30px" />
+    </ColoredBackgroundImageCircle>
+  );
+};
 
 export default SocialIcons;
