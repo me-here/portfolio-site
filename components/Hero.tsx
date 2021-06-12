@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styled from 'styled-components'
-import { CenteredFlex } from '../styles/global-styled'
+import { CenteredFlex, Title, SecondaryTitle } from '../styles/global-styled'
 import SocialIcons from './SocialIcons'
 
 export default function Hero() {
@@ -22,15 +22,6 @@ export default function Hero() {
     </CenteredFlex>
   );
 };
-
-const Title = styled.h1`
-    font-size: 5rem;
-`;
-
-const SecondaryTitle = styled.h2`
-    font-size: 2rem;
-    color: #747474;
-`;
 
 const SpacedGroup = styled.div`
   margin: ${(props: {vertical: string}) => props.vertical} 0;

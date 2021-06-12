@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {ScreenSize} from "./style-constants"
 
 /**The colors to be used in the application.*/
 export class Colors {
@@ -32,14 +33,26 @@ const sharedTextStyles = `
 `;
 
 export const Title = styled.h1`
-  font-size: 5rem;
   ${sharedTextStyles}
+
+  @media only screen and (min-width: ${ScreenSize.small}) {
+    font-size: 3rem;
+  }
+  @media only screen and (min-width: ${ScreenSize.medium}) {
+    font-size: 5rem;
+  }
 `;
 
 export const SecondaryTitle = styled.h2`
-  font-size: 2rem;
   color: ${Colors.accentGrey};
   ${sharedTextStyles}
+
+  @media only screen and (min-width: ${ScreenSize.small}) {
+    font-size: 1.25rem;
+  }
+  @media only screen and (min-width: ${ScreenSize.medium}) {
+    font-size: 2rem;
+  }
 `;
 
 export const SectionHeading = styled.h3`
