@@ -4,6 +4,7 @@ import {
   Colors,
   SpacedGroup
 } from "../styles/global-styled";
+import { ScreenSize } from '../styles/style-constants'
 const SkillsSection = () => (
   <SpacedGroup vertical="3rem" horizontal="3rem">
     <SectionHeading>Skills</SectionHeading>
@@ -18,10 +19,19 @@ const SkillsSection = () => (
 
 const SkillGrid = styled.div`
     display: grid;
-    grid-template-columns: repeat(2, 300px);
-    grid-template-rows: repeat(2, 300px);
+    grid-template-rows: 300px;
     place-content: center;
     gap: 1rem;
+
+    @media (min-width: ${ScreenSize.small})
+    {
+        grid-template-columns: 300px;
+    }
+
+    @media (min-width: ${ScreenSize.medium}) 
+    {
+        grid-template-columns: repeat(2, 300px);
+    }
 `;
 
 interface SkillBubbleProps {

@@ -12,6 +12,7 @@ export default function Home() {
       <Head>
         <title>Mihir Thanekar -- Developer</title>
         <meta name="description" content="Mihir Thanekar's Developer Portfolio" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
