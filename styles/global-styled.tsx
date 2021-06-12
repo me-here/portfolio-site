@@ -110,10 +110,10 @@ export const ColoredBackgroundImageCircle = styled(
   background: ${(props) => props.background};
   display: grid;
   place-items: center;
-  margin: ${(props) => props.margin || "unset"};
+  margin: 0;
 
   @media only screen and (min-width: ${ScreenSize.medium}) {
-    margin: 0;
+    margin: ${(props) => props.margin || "unset"};
   }
 `;
 
