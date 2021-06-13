@@ -6,6 +6,7 @@ import {
   SecondaryTitle,
   SpacedGroup,
 } from "../styles/global-styled";
+import { ScreenSize } from "../styles/style-constants";
 import SocialIcons from "./SocialIcons";
 
 export default function Hero() {
@@ -15,12 +16,16 @@ export default function Hero() {
         <Title>Mihir Thanekar</Title>
         <SecondaryTitle>Student Software Developer</SecondaryTitle>
       </CenteredSpacedGroup>
-      <Image
-        src="/hero_image.png"
-        alt="Cartoon Mihir with a laptop."
-        width={500}
-        height={500}
-      />
+
+      <ResponsiveHeroImage>
+        <Image
+          src="/hero_image.png"
+          alt="Cartoon Mihir with a laptop."
+          layout="fill"
+          //        width={500}
+          //       height={500}
+        />
+      </ResponsiveHeroImage>
       <CenteredSpacedGroup vertical="2rem">
         <SocialIcons />
       </CenteredSpacedGroup>
@@ -31,5 +36,20 @@ export default function Hero() {
 const CenteredSpacedGroup = styled(SpacedGroup)`
   > * {
     text-align: center;
+  }
+`;
+
+const ResponsiveHeroImage = styled.div`
+  width: 250px;
+  height: 250px;
+  position: relative;
+
+  @media only screen and (min-width: ${ScreenSize.medium}) {
+    height: 500px;
+    width: 500px;
+  }
+  @media only screen and (min-width: ${ScreenSize.large}) {
+    height: 700px;
+    width: 700px;
   }
 `;
