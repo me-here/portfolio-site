@@ -58,7 +58,8 @@ const WavingHandIconLink = styled(ColoredBackgroundImageCircle)`
 
 const ExpandedFlex = styled(CenteredFlex)`
   background: ${Colors.primaryRed};
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   color: white;
   justify-content: space-around;
+  text-align: center;
 `;
