@@ -6,8 +6,9 @@ import {
   Paragraph,
   CenteredFlex,
   RoundedTextLinkStyled,
-  UnderlinedLink
+  UnderlinedLink,
 } from "../styles/global-styled";
+import { ScreenSize } from "../styles/style-constants";
 import Image from "next/image";
 
 interface Link {
@@ -70,12 +71,17 @@ const WorkSection = () => (
 );
 
 const WorkPiece = (props: IWorkPiece) => (
-  <CenteredFlex column={false} justifyContent="space-around">
-    <CenteredFlex column={true} alignItems="start" style={{width: "20vw"}}>
+  <WorkDisplayStyled column={false} justifyContent="space-around">
+    <CenteredFlex column={true} alignItems="start">
       <h2>{props.title}</h2>
       <Paragraph>{props.subtitle}</Paragraph>
 
-      <CenteredFlex column={false} justifyContent="space-between" alignItems="center" style={{width: "100%"}}>
+      <CenteredFlex
+        column={false}
+        justifyContent="space-between"
+        alignItems="center"
+        style={{ width: "100%" }}
+      >
         {props.link ? (
           <RoundedTextLinkStyled href={props.link.href} background="#EB9362">
             {props.link.title}
@@ -86,8 +92,19 @@ const WorkPiece = (props: IWorkPiece) => (
         <UnderlinedLink>Learn More</UnderlinedLink>
       </CenteredFlex>
     </CenteredFlex>
-    <Image src={props.imgSrc} width="366px" height="701px" alt="My logo" />
-  </CenteredFlex>
+
+    <SpacedGroup vertical="1rem">
+      <Image src={props.imgSrc} width="366px" height="701px" alt="My logo" />
+    </SpacedGroup>
+  </WorkDisplayStyled>
 );
+
+const WorkDisplayStyled = styled(CenteredFlex)`
+  flex-direction: column;
+
+  @media only screen and (min-width: ${ScreenSize.medium}) {
+    flex-direction: row;
+  }
+`;
 
 export default WorkSection;
