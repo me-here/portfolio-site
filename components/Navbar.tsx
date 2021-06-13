@@ -48,6 +48,7 @@ const RightLinks = styled.div`
 
   @media only screen and (min-width: ${ScreenSize.medium}) {
     width: 33%;
+    flex-grow: 0;
   }
 `;
 
