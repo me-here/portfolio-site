@@ -103,16 +103,15 @@ export const ColoredBackgroundImageCircle = styled(
   width: ${(props) => props.size};
   height: ${(props) => props.size};
   border-radius: 50%;
-  border: ${(props) =>
-    props.borderThickness && props.borderColor
-      ? `${props.borderThickness} solid ${props.borderColor}`
-      : "none"};
   background: ${(props) => props.background};
   display: grid;
   place-items: center;
-  margin: 0;
 
   @media only screen and (min-width: ${ScreenSize.medium}) {
+    border: ${(props) =>
+      props.borderThickness && props.borderColor
+        ? `${props.borderThickness} solid ${props.borderColor}`
+        : "none"};
     margin: ${(props) => props.margin || "unset"};
   }
 `;
@@ -120,10 +119,13 @@ export const ColoredBackgroundImageCircle = styled(
 export const RoundedTextLinkStyled = styled(HoverableSocialLink)<LinkProps>`
   border-radius: 25px;
   padding: 1rem;
-  border: ${(props) =>
-    props.borderThickness && props.borderColor
-      ? `${props.borderThickness} solid ${props.borderColor}`
-      : "none"};
   background: ${(props) => props.background || null};
-  margin: ${(props) => props.margin || "unset"};
+
+  @media only screen and (min-width: ${ScreenSize.medium}) {
+    border: ${(props) =>
+      props.borderThickness && props.borderColor
+        ? `${props.borderThickness} solid ${props.borderColor}`
+        : "none"};
+    margin: ${(props) => props.margin || "unset"};
+  }
 `;

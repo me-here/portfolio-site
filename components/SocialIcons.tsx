@@ -7,28 +7,31 @@ import {
   ColoredBackgroundImageCircle,
   RoundedTextLinkStyled,
 } from "../styles/global-styled";
+import { ScreenSize } from "../styles/style-constants";
 
 const SocialIcons = ({ borderColor = "#414752", borderThickness = "3px" }) => {
   return (
-    <CenteredFlex column={false}>
-      <SocialCircleLink
-        href="https://github.com/me-here"
-        icon={faGithub}
-        borderThickness={borderThickness}
-        borderColor={borderColor}
-      />
-      <SocialCircleLink
-        href="https://www.linkedin.com/in/mihir-thanekar/"
-        icon={faLinkedin}
-        borderThickness={borderThickness}
-        borderColor={borderColor}
-      />
-      <SocialCircleLink
-        href="mailto:mihirthanekar@gmail.com"
-        icon={faEnvelope}
-        borderThickness={borderThickness}
-        borderColor={borderColor}
-      />
+    <CollapsableRow column={false}>
+      <CenteredFlex column={false}>
+        <SocialCircleLink
+          href="https://github.com/me-here"
+          icon={faGithub}
+          borderThickness={borderThickness}
+          borderColor={borderColor}
+        />
+        <SocialCircleLink
+          href="https://www.linkedin.com/in/mihir-thanekar/"
+          icon={faLinkedin}
+          borderThickness={borderThickness}
+          borderColor={borderColor}
+        />
+        <SocialCircleLink
+          href="mailto:mihirthanekar@gmail.com"
+          icon={faEnvelope}
+          borderThickness={borderThickness}
+          borderColor={borderColor}
+        />
+      </CenteredFlex>
       <RoundedTextLinkStyled
         margin="0 1rem"
         href="https://www.dropbox.com/s/gdoc7ilygyseryd/mihir_thanekar_resume.pdf?dl=0"
@@ -37,9 +40,14 @@ const SocialIcons = ({ borderColor = "#414752", borderThickness = "3px" }) => {
       >
         See my resume
       </RoundedTextLinkStyled>
-    </CenteredFlex>
+    </CollapsableRow>
   );
 };
+
+/* A flex row that collapses to a column when the screen width decreases past a certain threshold. */
+const CollapsableRow = styled(CenteredFlex)`
+  flex-wrap: wrap;
+`;
 
 const SocialCircleLink = ({
   icon,
