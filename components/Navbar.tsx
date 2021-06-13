@@ -1,25 +1,27 @@
-import Image from 'next/image'
+import Image from "next/image";
 import styled from "styled-components";
+import { ScreenSize } from "../styles/style-constants";
 
 const Navbar = () => {
   return (
     <NavContainer>
       <LogoContainer href="./">
-        <Image src="/logo.png" layout="fill" alt="My logo"/>
+        <Image src="/logo.png" layout="fill" alt="My logo" />
       </LogoContainer>
       <RightLinks>
-        <a href='google.com'>Home</a>
-        <a href='google.com'>Blog</a>
-        <a href='google.com'>About</a>
+        <a href="google.com">Home</a>
+        <a href="google.com">Blog</a>
+        <a href="google.com">About</a>
       </RightLinks>
     </NavContainer>
   );
 };
 
 const LogoContainer = styled.a`
-  width: 42.18px; 
+  width: 42.18px;
   height: 34.09px;
   position: relative;
+  flex-shrink: 0;
 `;
 
 const NavContainer = styled.div`
@@ -39,10 +41,14 @@ const NavContainer = styled.div`
 `;
 
 const RightLinks = styled.div`
-  width: 33%;
+  flex-grow: 1;
   display: flex;
   justify-content: space-around;
   font-weight: bold;
+
+  @media only screen and (min-width: ${ScreenSize.medium}) {
+    width: 33%;
+  }
 `;
 
 export default Navbar;
